@@ -1,0 +1,11 @@
+# Editor configuration, see http://editorconfig.org
+# 统一不同开发者的代码格式规则
+root = true # 根目录下的文件也应用规则，包括 .editorconfig 文件
+
+[*]
+charset = utf-8
+indent_style = tab
+indent_size = 2
+end_of_line = CRLF
+trim_trailing_whitespace = true
+insert_final_newline = true
