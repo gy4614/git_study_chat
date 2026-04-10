@@ -55,6 +55,8 @@ preset="card" 👉 Naive UI 内置样式（卡片风格）
 → props.visible
 → show = true
 → Modal 打开
+
+
 关闭弹窗
 子组件 → show = false
 → emit('update:visible', false)
