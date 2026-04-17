@@ -491,7 +491,7 @@ const footerClass = computed(() => {
     classes = ['sticky', 'left-0', 'bottom-0', 'right-0', 'p-2', 'pr-3', 'overflow-hidden']
   return classes
 })
-
+// 自动让输入框获得光标焦点
 onMounted(() => {
   scrollToBottom()
   if (inputRef.value && !isMobile.value)
@@ -506,14 +506,18 @@ onUnmounted(() => {
 
 <template>
   <div class="flex flex-col w-full h-full">
-    <HeaderComponent
+    <HeaderComponent 
       v-if="isMobile"
       :using-context="usingContext"
       @export="handleExport"
       @handle-clear="handleClear"
     />
     <main class="flex-1 overflow-hidden">
+      <!-- 
+      ref="scrollRef" JS 可拿到 DOM（用于滚动控制）
+      overflow-y-auto  允许垂直滚动-->
       <div id="scrollRef" ref="scrollRef" class="h-full overflow-hidden overflow-y-auto">
+        <!-- 内容外层容器 -->
         <div
           class="w-full max-w-screen-xl m-auto dark:bg-[#101014]"
           :class="[isMobile ? 'p-2' : 'p-4']"
@@ -538,6 +542,7 @@ onUnmounted(() => {
                   @regenerate="onRegenerate(index)"
                   @delete="handleDelete(index)"
                 />
+                <!-- 停止按钮容器 -->
                 <div class="sticky bottom-0 left-0 flex justify-center">
                   <NButton v-if="loading" type="warning" @click="handleStop">
                     <template #icon>
