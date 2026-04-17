@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "es2020", //支持 ES2020
+    "lib": [
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false, // 开启严格模式
+    "forceConsistentCasingInFileNames": true, // 强制文件名大小写一致
+    "esModuleInterop": true, // 允许在 CommonJS 模块中使用 ES 模块语法
+    "module": "esnext", // 使用 ESNext 模块语法
+    "moduleResolution": "node", // 使用 Node.js 模块解析器
+    "resolveJsonModule": true, // 允许导入 JSON 模块
+    "isolatedModules": true, // 每个文件独立编译
+    "baseUrl": ".", // 所有路径都从“项目根目录”开始解析
+    "outDir": "build", // 编译输出目录
+    "noEmit": true // TS 只做类型检查，不输出编译结果
+  },
+  "exclude": [
+    "node_modules",
+    "build"
+  ],
+  "include": [
+    "**/*.ts"
+  ]
+}
